@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 
 const server = express();
 
-const users = [{username: 'admin', password: 'password', firstName: 'A', lastName: 'B'}];
+const users = [{username: 'admin', password: 'password', firstName: 'Mike', lastName: 'Smith'}];
 
 server.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
