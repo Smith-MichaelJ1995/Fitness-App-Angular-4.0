@@ -1,0 +1,23 @@
+<div class="container">
+  
+<div class="row">
+     <div class="col-lg-12 custom-element-background">
+             <h1 align="center"><b>Hello, Welcome to 'MyFitnessTracker' <br> Please Log In Below!</b></h1>
+             <div class="container">   
+                 <form>
+                     <div class="form-group">
+                         <label for="username" align="left">Username:</label>
+                         <input type="username" [(ngModel)]="user.username" class="form-control" id="name" placeholder="Enter username" name="name">
+                     </div>
+                     <div class="form-group">
+                         <label for="pwd">Password:</label>
+                         <input type="password" [(ngModel)]="user.password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                     </div>
+                     <input type="submit" (click)="login()" class="btn btn-primary" style="width:100%" value="Proceed"/>&nbsp;
+                     <h4 style="color: #000; cursor: pointer;" routerLink="/register">If you haven't signed up yet, please click here to register</h4>
+                 </form>
+             </div> 
+     </div>   
+</div>  
+
+</div>

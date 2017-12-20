@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+            <link rel="icon" href="img\FitTrackLogo.jpg" type="image/png">
+            <title>My Fitness Tracker</title>
+    
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+            
+            <link rel="stylesheet" href="dist/main.bundle.css">
+        </head>
+        <body>
+    
+            <div id="header-placeholder"></div>
+             
+            <div class="container">
+                <div class="container">
+                    <div class="jumbotron">
+                      <h1 align="center">Profile Management</h1>
+                      <p>Use this section to configure your current physical status into our system. At 'My Fitness Tracker',
+                        we keep track of your preferred activities, favorite sports, and other metrics like height and weight.
+                        You can also use this section to create detailed goals for yourself.   
+                      </p>
+                   </div>
+               </div>
+               <div class="row registration-form-rows">
+                   <div class="col-md-12">
+                        <h2 align="center">Configure Your Profile:</h2>
+                        <form action="#" style="padding:10px;">
+                            <div class="form-group">
+                              <label for="sports">What sports have you played? (comma seperated!) </label>
+                              <input type="sports" class="form-control" id="sports" placeholder="Favorite Sports?" name="sports">
+                            </div>
+                            <div class="form-group">
+                              <label for="activ">What are your favorite activities? (comma seperated!) </label>
+                              <input type="activ" class="form-control" id="activ" placeholder="Favorite Activities" name="activities">
+                            </div>
+                            <div class="radio">
+                                    <label>Do you lift weights?<br><input type="radio" name="weights" value="Yes"> Yes
+                                      <input type="radio" name="gender" value="No"> No<br></label>
+                            </div>
+                            <div class="radio">
+                                    <label>Do you Run Often?<br><input type="radio" name="run" value="Yes"> Yes
+                                      <input type="radio" name="run" value="No"> No<br></label>
+                            </div>
+                            <div class="radio">
+                              <label>Gender?<br><input type="radio" name="gender" value="male"> Male
+                                <input type="radio" name="gender" value="female"> Female<br></label>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                            <label for="">Tell us more about yourself!</label>
+                            <textarea type="textarea" rows="4" cols="50" class="form-control" id="sports" placeholder="We want to learn about you :)" name="textarea"></textarea>    
+                          </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                  </div>
+                    
+             </div> 
+             <div class="row" style="padding-top:2%;">
+                    <div class="col-sm-6">
+                       <div class="card">
+                           <img src="img\advice2.jpg" style="width:100%;">
+                           <div class="card-body">
+                                <h4 class="card-title">Fitness Advice</h4>
+                                <p class="card-text">"The secret of change is to focus all of your energy not on fighting the old
+                                but building the new"</p>
+                                <a href="./_advice.html" class="btn btn-primary">See Expertise</a>
+                            </div>
+                       </div>    
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                           <img src="img\motivation2.jpg" style="width:100%; height:400px;">
+                           <div class="card-body">
+                                <h4 class="card-title">Motivation</h4>
+                                <p class="card-text">In order to stick to your goals, you must be motivated! You must have a clear and compelling
+                                vision for yourself if you want to perserve when times are tough.</p>
+                                <a href="./_motivation.html" class="btn btn-primary">Live Your Dreams</a>
+                          </div> 
+                        </div> 
+                    </div>
+                </div>   
+        </div>   
+        
+            <div id="footer-placeholder"></div>
+    
+            <script src="dist/bundle.js">
+            </script>
+       </body>
+</html>

@@ -1,0 +1,47 @@
+<app-header></app-header>
+ 
+    <div class="container">
+            <div class="row">
+
+
+                <div *ngIf="userService.isLoggedIn">
+
+                        <div class="col-md-12 custom-element-background" style="margin-top: 1%;">
+                                <h1 class="text-center" style="font-size:50px;"><b><i>Welcome, {{userService.name}}!</i></b></h1>
+                          </div>
+
+                </div>  
+            </div>    
+            <div class="row">
+                <div class="col-md-8 custom-element-background">
+                    <h2 style="text-align:center;"><b>Activity Tracking Services</b></h2>
+                    <div id="muscle-beach-logo" class="text-center">
+                            <img src="../assets/img/Muscle-Beach.jpg" />
+                    </div>    
+                    <p>
+                        The exercise tracking component is the primary functionality of this application. 
+                        Users can view all other users that are currently logged into the application.
+                        All users can submit exercises that they've completed to a common completed exercises area.
+                        Check it out and let us know what you think! 
+                    </p>  
+                    
+                    <a href="exercise"><button class="btn btn-primary btn-cust-margins">Exercise Log</button></a>
+                </div>
+                <div class="col-md-4 custom-element-background">
+                        <h2 style="text-align:center;"><b>About the App</b></h2>
+                        <p> Welcome to my final project for the Fall 2017 Web Programming course! 
+                            Feel free to use the navigation window above to navigate anywhere throughout the application.
+                             The exercise log is the primary requirement for the project, it can be found by clicking "Exercise Log" links anywhere throughout this page. Motivation, Advice, and Tutorials provide imformation that can you transform your life! Feel free to navigate around and enjoy!
+                        </p>
+                        <div id="muscle-beach-logo" class="text-center">
+                                <img src="../assets/img/tutorials.jpg" />
+                        </div>
+                        <p> We have provided the functionality to retrieve tutorials and videos directly from youtube, check these out and let us know what you think!
+                        </p> 
+                        
+                        <a href="tutorials"><button class="btn btn-primary btn-cust-margins">Tutorials</button></a>
+                </div>                
+           </div>
+           
+ </div>
+<app-footer></app-footer>

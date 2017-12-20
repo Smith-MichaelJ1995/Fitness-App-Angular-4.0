@@ -1,0 +1,102 @@
+<app-header></app-header>
+
+<!-- EX LOG -->
+    <div class="container">
+            <div class="row">
+                   <div class="col-md-4" style="margin-top:14px;">
+                        <div class="card">
+                            <div class="card-body">
+                              <div *ngIf="activeUsers" class="custom-element-background">
+                                  <h2 class="center-text"><b>Active Users:</b></h2>
+                                  <div class="card-text">
+                                      <div class="list-group list-group-flush" id="my-exercises" >
+                                          <a class="list-group-item list-group-item-action" id="posEx" *ngFor="let user of activeUsers">{{user.firstName + ' ' + user.lastName}}</a>
+                                     </div>      
+                                  </div>
+                              </div>    
+                              <div class="custom-element-background">
+                                <h2 class="center-text"><b>Submit Completed Exercises:</b></h2>
+                                <div class="card-text" style="text-align: left;">
+                                        <form 
+                                        <!-- (submit)="onSubmit(name.value,duration.value,calsburned.value,location.value,description.value)"  -->
+                                        style="padding:1%;">
+                                                <div class="form-group">
+                                                  <label for="name" align="left">Exercise Name:</label>
+                                                  <input type="name" class="form-control" id="name" placeholder="Name Of Exercise" name="name" #name>
+                                                </div>
+                                                <div class="form-group">
+                                                  <label for="duration">Duration Of Time:</label>
+                                                  <input type="duration" class="form-control" id=duration placeholder="Time Duration" name="duration" #duration>
+                                                </div>
+                                                <div class="form-group">
+                                                      <label for="calsburned">Burned Calories:</label>
+                                                      <input type="calsburned" class="form-control" id="calsburned" placeholder="Calories Burned" name="calsburned" #calsburned>
+                                                </div>
+                                                <div class="form-group">
+                                                      <label for="location">Exercise Location:</label>
+                                                      <input type="location" class="form-control" id="location" placeholder="Location Of Exercise" name="location" #location>
+                                                </div>
+                                                <div class="form-group">
+                                                      <label for="description">Description:</label>
+                                                      <input type="textarea" class="form-control" id="description" placeholder="Tell Us About The Workout" name="description" #description>
+                                                </div>
+                                            <button class="btn btn-primary" >SUBMIT</button>  
+                                        </form>
+                                </div> 
+                              </div>  
+                            </div>
+                        </div>     
+                   </div>
+                
+                   <div class="col-md-8 custom-element-background">
+                        <div class="card">
+                              <div class="card-body">
+                                  <h2 class="center-text"><b>Submitted Exercises:</b></h2>
+                                    <div class="card-text">
+                                            <div class="list-group list-group-flush" id="my-exercises" >
+                                                <a class="list-group-item list-group-item-action" style="margin-bottom:15px;" id="posEx" *ngFor="let exercise of activities">
+
+                                                    <!--format exercises attributes neatly-->
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                                <b>User:</b> <h4 class="submittedExerciseText">{{exercise.user}}</h4> &nbsp;
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                                <b>Exercise Name:</b> <h4 class="submittedExerciseText">{{exercise.exerciseName}}</h4> &nbsp;
+                                                        </div>
+                                                    </div>
+
+                                                    <hr />
+
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                                <b>Duration:</b> <h4 class="submittedExerciseText">{{this.exercise.timeDuration}}</h4> &nbsp;
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                                <b>Burned Calories:</b> <h4 class="submittedExerciseText">{{this.exercise.burnedCalories}}</h4> &nbsp;
+                                                        </div>
+                                                    </div>
+
+                                                    <hr />
+
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                                    <b>Exercise Location:</b> <h4 class="submittedExerciseText">{{this.exercise.exerciseLocation}}</h4> &nbsp;
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                                    <b>Description:</b> <h4 class="submittedExerciseText">{{this.exercise.description}}</h4> &nbsp;
+                                                        </div>
+                                                    </div>    
+                                                    
+                                                </a>
+                                            </div>
+                                    </div>    
+                             </div>    
+                                              
+                        </div>
+                   </div> 
+        </div>
+   </div> 
+
+<app-footer></app-footer>
+

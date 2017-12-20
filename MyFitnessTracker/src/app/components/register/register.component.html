@@ -1,0 +1,30 @@
+<div class="container">
+    
+  <div class="row">
+       <div class="col-lg-12 custom-element-background">
+               <h1 align="center"><b>Signup for 'MyFitnessTracker':</b></h1>
+               <div class="container">   
+                   <form>
+                        <div class="form-group">
+                                <label for="firstName" align="left">First Name:</label>
+                                <input [(ngModel)]="user.firstName" type="text" class="form-control" id="firstName" placeholder="Enter yur first name" name="username">
+                        </div>
+                        <div class="form-group">
+                                <label for="lastName" align="left">Last Name:</label>
+                                <input [(ngModel)]="user.lastName" type="text" class="form-control" id="lastName" placeholder="Enter yur last name" name="username">
+                        </div>
+                       <div class="form-group">
+                           <label for="username" align="left">Username:</label>
+                           <input [(ngModel)]="user.email" type="email" class="form-control" id="name" placeholder="Enter username" name="username">
+                       </div>
+                       <div class="form-group">
+                           <label for="password">Password:</label>
+                           <input [(ngModel)]="user.password" type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+                       </div>
+                       <input (click)="register()" type="submit" class="btn btn-primary" style="width: 100%" value="Register!"/>&nbsp;
+                   </form>
+               </div> 
+       </div>   
+  </div>  
+  
+  </div>

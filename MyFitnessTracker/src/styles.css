@@ -1,0 +1,62 @@
+/*primary page styles*/
+
+/*general styles*/
+body {
+    background-color: #4db8ff;
+}
+
+.jumbotron{
+    padding-top:0px;
+    background-color:#EEE8AA;
+}
+
+.container {
+    margin-top: 5%;
+}
+
+.custom-element-background{
+    margin-top:2%;
+    padding: 10px;
+    background-color: #e6e6e6;
+    border-style: ridge;
+}
+
+p {
+    margin: 10px;
+    color: #000;
+    font-size: 18px;
+}
+
+.btn-cust-margins {
+    margin: 1%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+    /*card styles*/
+    .card-img-top{
+        width: 100%;
+        height: 275px;
+    }
+    
+
+    /*end card styles*/
+
+.center-text{
+    text-align: center;
+}
+
+/*end general styles*/
+
+
+
+
+
+
+
+
+
+
