@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data-service/data.service';
+import { UserService } from '../../services/user-service/user.service';
 
 @Component({
   selector: 'app-advice',
@@ -10,7 +11,7 @@ export class AdviceComponent implements OnInit {
 
   posts:Post[];
 
-  constructor(private dataService:DataService)
+  constructor(private dataService:DataService,public userService: UserService)
   {
       console.log('Constructor ran...');
   }

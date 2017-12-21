@@ -1,16 +1,11 @@
 <app-header></app-header>
 
 <div class="container">
-  <div class="jumbotron">
-
-     <h1>Here are today's top stories:</h1>
-     <div *ngFor="let post of this.posts">
-         <h4>{{post.title}}</h4>
-         <p>{{post.description}}</p>
-     </div>
+  <div class="jumbotron custom-element-background">
+        <h3 align="center"><i><b>{{userService.name}}</b>, we have provided articles containing advice about different realms of physical fitness. For example, remember to always drink water, and remember...its always best to have a friend to workout with!</i></h3>
  </div>
 <div class="row">
-     <div class="col-sm-6">
+     <div class="col-sm-6 custom-element-background">
          <div class="card">
              <img src="../assets/img/h20.jpg" style="width:100%;">
                 <div class="card-body">
@@ -23,7 +18,7 @@
          </div>
      </div>
      <div class="col-sm-6">
-             <div class="card">
+             <div class="card custom-element-background">
                      <img src="../assets/img/best-friend.jpg" style="width:100%;">
                         <div class="card-body">
                             <h4 class="card-title">Find the best fitness friend</h4>
@@ -37,7 +32,7 @@
 </div> 
 
 <div class="row" style="margin-top:15px;">
-     <div class="col-sm-6">
+     <div class="col-sm-6 custom-element-background">
          <div class="card">
              <img src="../assets/img/nuts.jpg" style="width:100%;">
                 <div class="card-body">
@@ -50,7 +45,7 @@
          </div>
      </div>
      <div class="col-sm-6">
-             <div class="card">
+             <div class="card custom-element-background">
                      <img src="../assets/img/achy.jpg" style="width:100%;">
                         <div class="card-body">
                             <h4 class="card-title">Relieve those achy muscles</h4>

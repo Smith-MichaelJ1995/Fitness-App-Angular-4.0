@@ -9,13 +9,13 @@ export class ExerciseLogComponent implements OnInit {
 
   //Exercise Attributes
   activities:Activity[];
-  activeUsers;
 
   constructor(private userService:UserService) {}
 
   ngOnInit() {
     this.userService.getloggedInUsers().subscribe(response => {
-      this.activeUsers = response;
+       console.log(response);
+      //this.activeUsers = response;
     });
   }
 

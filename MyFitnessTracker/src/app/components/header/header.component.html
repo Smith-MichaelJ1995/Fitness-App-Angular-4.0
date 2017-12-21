@@ -11,9 +11,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li *ngIf="userService.isLoggedIn"><a class="nav-item nav-link" href="home"><b>Welcome back {{userService.name}}</b> <span class="sr-only">(current)</span></a></li>
-        <li><a class="nav-item nav-link" id="home-link" href="home"><b>Home</b> <span class="sr-only">(current)</span></a></li>
-        <li><a class="nav-item nav-link" id="exercise-link" href="exercise"><b>Exercise Log</b> <span class="sr-only">(current)</span></a></li>
+        <li *ngIf="userService.isLoggedIn"><a class="nav-item nav-link" id="home-link" routerLink="/home" routerLink="/home"><b>Hi there, {{userService.name}}</b> <span class="sr-only">(current)</span></a></li>
+        <li><a class="nav-item nav-link" id="exercise-link" routerLink="/exercise"><b>Exercise Log</b> <span class="sr-only">(current)</span></a></li>
         <li><a class="nav-item nav-link" id="motivation-link" routerLink="/motivation"><b>Motivation</b> <span class="sr-only">(current)</span></a></li>
         <li><a class="nav-item nav-link" id="advice-link" routerLink="/advice"><b>Advice</b> <span class="sr-only">(current)</span></a></li> 
         <li><a class="nav-item nav-link" id="tutorials-link" routerLink="/tutorials"><b>Tutorials</b> <span class="sr-only">(current)</span></a></li>

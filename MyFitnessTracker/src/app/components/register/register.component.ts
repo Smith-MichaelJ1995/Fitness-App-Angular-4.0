@@ -10,7 +10,7 @@ export class RegisterComponent {
     user: UserRegistration = {
         firstName: '',
         lastName: '',
-        email: '',
+        username: '',
         password: ''
     }
 
@@ -22,8 +22,8 @@ export class RegisterComponent {
 }
 
 interface UserRegistration {
-    firstName: string,
-    lastName: string,
-    email: string;
+    firstName: string;
+    lastName: string;
+    username: string;
     password: string;
 }

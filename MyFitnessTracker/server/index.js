@@ -6,7 +6,8 @@ const jwt = require('jsonwebtoken');
 
 const server = express();
 
-const users = [{username: 'admin', password: 'password', firstName: 'Mike', lastName: 'Smith'}];
+const users = [];
+//{ firstName: 'Mike', lastName: 'Smith',username: 'admin', password: 'password'}
 
 server.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -15,24 +16,24 @@ server.use(function(req, res, next) {
   });
 server.use(bodyParser.urlencoded({ extended: false }))
 server.use(bodyParser.json());
-// server.use("/client", express.static("./jquery-mockup"))
-// server.use("/old", handler.main);
-// server.use("/game", gameController.router );
+
 
 // GET: /
 server.get("/", (req, res) => res.send("Welcome to the 'MyFitnessTracker' application!"))
 
 server.get("/auth/loggedinusers", (req, res) => {
-    let users = users.filter(byLoggedIn);
+     let players = users.filter(byLoggedIn);
 
-    res.json(users);
+     //console.log(res.json(players));
+     res.json(players);
 
-    function byLoggedIn(element) {
-        return element.loggedIn;
-    }
+     function byLoggedIn(element) {
+         return element.loggedIn;
+     }
 })
 
 server.post("/auth/register", (req, res) => {
+
     let user = req.body;
 
     let userFound = findUserByUsername(user);
@@ -42,6 +43,12 @@ server.post("/auth/register", (req, res) => {
     //the user hasn't been added yet, add it to users list.
     users.push(user);
     
+    console.log('NEW USER REGISTERED:');
+    for(let entry of users)
+    {
+        console.log(entry);
+    }
+
     //if code reaches this point, the new user has been added.
     sendResponse(res,true,"Success, the new user has been added!");
 })
@@ -70,6 +77,9 @@ server.post("/auth/login", (req, res) => {
     let name = firstName + ' ' + lastName;
 
     let token = jwt.sign({name}, '123');
+
+    //garbage code
+    console.log('THERE ARE', users.length, '... USERS :', foundUser.firstName, ' is now logged in!');
 
     sendResponse(res, true, 'User successfully verified', name, token);
 })

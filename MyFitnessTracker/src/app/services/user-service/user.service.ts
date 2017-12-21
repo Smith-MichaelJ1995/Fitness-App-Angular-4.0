@@ -13,12 +13,18 @@ export class UserService {
   constructor(private http: HttpClient, private router: Router) {}
 
   register(user) {
-      this.http.post(BASE_ADDRESS + '/register', user).subscribe(response => console.log(response));
+      const response = {} 
+      this.http.post(BASE_ADDRESS + '/register', user).subscribe(response => {
+          this.router.navigate(['']);
+      });
+    
   }
 
   login(user) {
     this.http.post<ServerResponse>(BASE_ADDRESS + '/login', user).subscribe(response => {
         if (!response.token) return;
+
+        
 
         localStorage.setItem(NAME_KEY, response.name);
         localStorage.setItem(TOKEN_KEY, response.token);

@@ -20,7 +20,6 @@ import { UserService } from './services/user-service/user.service';
 
 
 import { DataService } from './services/data-service/data.service';
-import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 
 const appRoutes: Routes = [
@@ -55,13 +54,9 @@ const appRoutes: Routes = [
    component:TutorialsComponent
  },
  { 
-   path:'login',
-   component:LoginComponent
- },
- { 
   path:'register',
   component:RegisterComponent
-}
+ }
 
 ]
 
@@ -77,7 +72,6 @@ const appRoutes: Routes = [
     HomeComponent,
     TutorialsComponent,
     SignInComponent,
-    LoginComponent,
     RegisterComponent
   ],
   imports: [

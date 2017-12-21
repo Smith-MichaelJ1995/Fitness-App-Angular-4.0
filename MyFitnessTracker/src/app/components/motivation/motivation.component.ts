@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../services/user-service/user.service';
 
 @Component({
   selector: 'app-motivation',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MotivationComponent implements OnInit {
 
-  constructor() { }
+  constructor(public userService: UserService) { }
 
   ngOnInit() {
   }
