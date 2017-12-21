@@ -42,6 +42,11 @@ export class UserService {
     });
   }
 
+  search(text) {
+     //console.log(text, 'in user service ts!');
+     this.http.post<ServerResponse>(BASE_ADDRESS + '/search', text).subscribe(response => console.log('in user service response'));
+  }
+
   //return status whether user is logged in 
   get isLoggedIn() {
       return !!localStorage.getItem(TOKEN_KEY);

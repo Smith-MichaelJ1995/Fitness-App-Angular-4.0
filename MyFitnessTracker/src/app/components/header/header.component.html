@@ -16,6 +16,12 @@
         <li><a class="nav-item nav-link" id="motivation-link" routerLink="/motivation"><b>Motivation</b> <span class="sr-only">(current)</span></a></li>
         <li><a class="nav-item nav-link" id="advice-link" routerLink="/advice"><b>Advice</b> <span class="sr-only">(current)</span></a></li> 
         <li><a class="nav-item nav-link" id="tutorials-link" routerLink="/tutorials"><b>Tutorials</b> <span class="sr-only">(current)</span></a></li>
+        <li style="margin-top: 14px;">
+          <input type="username" [(ngModel)]="searchValue.text" style="margin-bottom:12px;" class="form-control" id="name" placeholder="Enter a keyword" name="name">
+        </li>
+        <li>
+          <input type="submit" (click)="search()" class="btn btn-primary" style="width:75px; margin-left: 10px; margin-top: 10px; margin-right: 15px;" value="Search!"/>&nbsp;
+        </li>  
       </ul>
     </div>
   </div>

@@ -8,6 +8,9 @@ const server = express();
 
 const users = [];
 const exercises = [];
+
+//FINAL PROJECT KEYWORDS LIST
+const searchWords = [{text: 'I love to run'}];
 //{ firstName: 'Mike', lastName: 'Smith',username: 'admin', password: 'password'}
 
 server.use(function(req, res, next) {
@@ -92,6 +95,50 @@ server.post("/auth/login", (req, res) => {
 
     sendResponse(res, true, 'User successfully verified', name, token);
 })
+
+//FINAL PROJECT, SEARCH FOR KEYWORDS ON THE SERVER
+//POST
+server.post("/auth/search", (req, res) => {
+    //console.log('in server');
+    let word = req.body;
+    //console.log(word);
+
+    let result = findSearchByString(word);
+
+    //console.log(result);
+
+    
+})
+
+function findSearchByString(word) {
+   //traverse the list of exercises,
+   //return a certain exercise if the keyword matches any of the exercies properties
+    for(let ex of exercises)
+    {
+        if(ex.exerciseName.text === word.text.text)
+        {
+            return ex;
+        }
+        else if(ex.timeDuration.text === word.text.text)
+        {
+            return ex;
+        }
+        else if(ex.burnedCalories.text === word.text.text)
+        {
+            return ex;
+        }
+        else if(ex.exerciseLocation.text === word.text.text)
+        {
+            return ex;
+        }
+        else if(ex.description.text === word.text.text)
+        {
+            return ex;
+        }
+    }
+    return false;
+}
+
 
 function sendResponse(res, success, message, name, token) {
     res.json({success, message, name, token});

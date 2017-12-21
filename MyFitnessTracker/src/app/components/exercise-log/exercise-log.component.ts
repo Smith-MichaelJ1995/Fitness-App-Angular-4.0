@@ -48,7 +48,7 @@ export class ExerciseLogComponent implements OnInit {
        });
   }
 }
-/*HOW TO IMPORT EXERCISE OBJECT FROM A MODULES FOLDER*/
+/*ACTIVITY */
 interface Activity{
   user:string,
   exerciseName:string,
