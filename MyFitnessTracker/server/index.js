@@ -7,6 +7,7 @@ const jwt = require('jsonwebtoken');
 const server = express();
 
 const users = [];
+const exercises = [];
 //{ firstName: 'Mike', lastName: 'Smith',username: 'admin', password: 'password'}
 
 server.use(function(req, res, next) {
@@ -17,7 +18,15 @@ server.use(function(req, res, next) {
 server.use(bodyParser.urlencoded({ extended: false }))
 server.use(bodyParser.json());
 
+server.post('/auth/addexercise', (req, res) => {
+    console.log(req.body)
+    exercises.push(req.body);
+    sendResponse(res, true, 'Success');
+})
 
+server.get('/auth/exercises', (req, res) => {
+    res.json(exercises);
+})
 // GET: /
 server.get("/", (req, res) => res.send("Welcome to the 'MyFitnessTracker' application!"))
 

@@ -12,6 +12,15 @@ export class UserService {
   //construct user object
   constructor(private http: HttpClient, private router: Router) {}
 
+
+  submitExercise(exercise) {
+      return this.http.post(BASE_ADDRESS + '/addexercise', exercise);
+  }
+
+  getSubmittedEx() {
+      return this.http.get(BASE_ADDRESS + '/exercises');
+  }
+
   register(user) {
       const response = {} 
       this.http.post(BASE_ADDRESS + '/register', user).subscribe(response => {

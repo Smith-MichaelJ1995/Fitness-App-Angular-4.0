@@ -10,7 +10,7 @@
                                   <h2 class="center-text"><b>Active Users:</b></h2>
                                   <div class="card-text">
                                       <div class="list-group list-group-flush" id="my-exercises" >
-                                          <a class="list-group-item list-group-item-action" id="posEx"></a>
+                                          <a class="list-group-item list-group-item-action" *ngFor="let user of activeUsers" id="posEx">{{user.username}}</a>
                                      </div>      
                                   </div>
                               </div>    
@@ -20,26 +20,27 @@
                                         <form style="padding:1%;">
                                                 <div class="form-group">
                                                   <label for="name" align="left">Exercise Name:</label>
-                                                  <input type="name" class="form-control" id="name" placeholder="Name Of Exercise" name="name">
+                                                  <input type="name" [(ngModel)]="exercise.exerciseName" class="form-control" id="name" placeholder="Name Of Exercise" name="name">
                                                 </div>
                                                 <div class="form-group">
                                                   <label for="duration">Duration Of Time:</label>
-                                                  <input type="duration" class="form-control" id=duration placeholder="Time Duration" name="duration">
+                                                  <input type="duration" [(ngModel)]="exercise.timeDuration" class="form-control" id=duration placeholder="Time Duration" name="duration">
                                                 </div>
                                                 <div class="form-group">
                                                       <label for="calsburned">Burned Calories:</label>
-                                                      <input type="calsburned" class="form-control" id="calsburned" placeholder="Calories Burned" name="calsburned">
+                                                      <input type="calsburned" [(ngModel)]="exercise.burnedCalories" class="form-control" id="calsburned" placeholder="Calories Burned" name="calsburned">
                                                 </div>
                                                 <div class="form-group">
                                                       <label for="location">Exercise Location:</label>
-                                                      <input type="location" class="form-control" id="location" placeholder="Location Of Exercise" name="location">
+                                                      <input type="location" [(ngModel)]="exercise.exerciseLocation" class="form-control" id="location" placeholder="Location Of Exercise" name="location">
                                                 </div>
                                                 <div class="form-group">
                                                       <label for="description">Description:</label>
-                                                      <input type="textarea" class="form-control" id="description" placeholder="Tell Us About The Workout" name="description">
+                                                      <input type="textarea" class="form-control" [(ngModel)]="exercise.description" id="description" placeholder="Tell Us About The Workout" name="description">
                                                 </div>
-                                            <button class="btn btn-primary" >SUBMIT</button>  
+                                            <button class="btn btn-primary" (click)="submitEx()" >SUBMIT</button>  
                                         </form>
+  
                                 </div> 
                               </div>  
                             </div>
@@ -52,7 +53,7 @@
                                   <h2 class="center-text"><b>Submitted Exercises:</b></h2>
                                     <div class="card-text">
                                             <div class="list-group list-group-flush" id="my-exercises" >
-                                                <a class="list-group-item list-group-item-action" style="margin-bottom:15px;" id="posEx" *ngFor="let exercise of activities">
+                                                <a class="list-group-item list-group-item-action" style="margin-bottom:15px;" id="posEx" *ngFor="let exercise of submittedEx">
 
                                                     <!--format exercises attributes neatly-->
                                                     <div class="row">

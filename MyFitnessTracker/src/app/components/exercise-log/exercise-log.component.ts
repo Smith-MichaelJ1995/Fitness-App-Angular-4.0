@@ -7,77 +7,53 @@ import { UserService } from '../../services/user-service/user.service';
 })
 export class ExerciseLogComponent implements OnInit {
 
+  submittedEx;
+  activeUsers;
   //Exercise Attributes
-  activities:Activity[];
+  exercise: Activity = {
+    user: '',
+    exerciseName: '',
+    timeDuration: '',
+    burnedCalories: '',
+    exerciseLocation: '',
+    description: ''
+}
 
-  constructor(private userService:UserService) {}
+  constructor(private userService:UserService) {
+     
+  }
 
   ngOnInit() {
+    this.userService.getloggedInUsers().subscribe(res => [
+      this.activeUsers = res
+    ])
+
+
     this.userService.getloggedInUsers().subscribe(response => {
        console.log(response);
       //this.activeUsers = response;
+      this.userService.getSubmittedEx().subscribe(res => {
+        this.submittedEx = res;
+      });
     });
   }
 
-  // onSubmit(name,duration,calsburned,location,description) {
-    //console.log(name);
-    //console.log(duration);
-    //console.log(calsburned);
-    //console.log(location);
-    //console.log(description);
-
-  //   var exercise: Activity = ({user:'Michael',
-  //     exerciseName:name,
-  //     timeDuration:duration,
-  //     burnedCalories:calsburned,
-  //     exerciseLocation:location,
-  //     description:description });
-
-
-  //     //check if this identical activity has already been added to the list
-  //     if(!(this.verifyNewActivity(exercise,this.activities)))
-  //     {
-  //       this.activities.push(exercise);
-  //     }
-
-  //   return false;
-  // }
-
-  //check if the identical activity has been added to the list
-  verifyNewActivity(exercise, activities){
-    for(let ex of this.activities)
-    {
-       if(ex.user === exercise.user)
-       {
-          if(ex.timeDuration === exercise.timeDuration)
-          {
-             if(ex.exerciseName === exercise.exerciseName)
-             {
-                if(ex.exerciseLocation === exercise.exerciseLocation)
-                {
-                   if(ex.description == exercise.description)
-                   {
-                     if(ex.burnedCalories === exercise.burnedCalories)
-                     {
-                        return true;
-                     }
-                   }
-                }
-             }
-          }
-       }
-    }
-    return false;
+  submitEx()
+  {
+    this.exercise.user = this.userService.name;
+       this.userService.submitExercise(this.exercise).subscribe(res => {
+        this.userService.getSubmittedEx().subscribe(res => {
+          this.submittedEx = res;
+        });
+       });
   }
-
 }
-
 /*HOW TO IMPORT EXERCISE OBJECT FROM A MODULES FOLDER*/
 interface Activity{
   user:string,
   exerciseName:string,
   timeDuration:string,
-  burnedCalories:number,
+  burnedCalories:string,
   exerciseLocation:string,
   description:string
 }
